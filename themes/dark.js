@@ -5,7 +5,7 @@ import {DarkTheme} from 'react-native-paper';
 const overrideProperties = {
 
   colors: {
-    ...DarkTheme,
+    ...DarkTheme.colors,
     background: "#2c3e50",
     text: "#fff",
     accent: "#1abc9c",
