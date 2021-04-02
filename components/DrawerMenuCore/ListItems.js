@@ -4,7 +4,7 @@ import {ScrollView} from 'react-native';
 
 import createItems from './items';
 
-const DrawerMenuItems = ({
+const ListItems = ({
   onPressBadges,
   onPressSettings
 }) => {
@@ -29,4 +29,4 @@ const DrawerMenuItems = ({
   );
 }
 
-export default DrawerMenuItems;
+export default ListItems;

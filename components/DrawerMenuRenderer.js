@@ -1,8 +1,8 @@
 import React from 'react';
 
 import Wrapper from './Wrapper';
-import DrawerMenuHeader from './DrawerMenuCore/DrawerMenuHeader';
-import DrawerMenuItems from './DrawerMenuCore/DrawerMenuItems';
+import DrawerMenuHeader from './DrawerMenuCore/Header';
+import DrawerMenuItems from './DrawerMenuCore/ListItems';
 
 
 const DrawerMenuRenderer = ({

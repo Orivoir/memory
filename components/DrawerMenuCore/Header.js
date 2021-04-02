@@ -3,9 +3,7 @@ import {View} from 'react-native';
 import resolveAssetSource from 'react-native/Libraries/Image/resolveAssetSource';
 import {SvgCssUri} from 'react-native-svg';
 
-
-
-const DrawerMenuHeader = ({logoSize}) => {
+const Header = ({logoSize}) => {
 
   const svg = resolveAssetSource(require('./../../assets/images/logo.svg'));
 
@@ -25,4 +23,4 @@ const DrawerMenuHeader = ({logoSize}) => {
   );
 }
 
-export default DrawerMenuHeader;
+export default Header;
