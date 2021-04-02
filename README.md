@@ -13,7 +13,7 @@
 - Themes ✅
 
 - Home screen ✅
-- Settings screen ❌
+- Settings screen ✅
 - Game screen ❌
 - Badges screen ❌
 

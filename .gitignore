@@ -21,6 +21,9 @@ DerivedData
 *.ipa
 *.xcuserstate
 
+# Asset height weight directory
+assets/
+
 # Android/IntelliJ
 #
 build/

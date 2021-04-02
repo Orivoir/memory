@@ -19,7 +19,7 @@ export default function cardsNumberReducer(state=INITIAL_STATE, action) {
         action.value >= MIN_VALUE &&
         action.value <= MAX_VALUE
       ) {
-        return action.value;
+        return Math.round(action.value);
       }
       return state;
 

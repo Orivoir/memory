@@ -9,5 +9,6 @@ export default function useIsLand() {
 
   const {width, height} = useWindowDimensions();
 
+  // ratio >= 1 is considerate as landscape mode
   return width >= height;
 }
