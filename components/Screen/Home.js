@@ -2,14 +2,13 @@ import React from 'react';
 import {Button, Text} from 'react-native-paper';
 import {StyleSheet, View} from 'react-native';
 import PlayButton from './../PlayButton';
-import {connect} from 'react-redux';
 
 import useIsLand from '../../hooks/useIsLand';
 import Wrapper from '../Wrapper';
+import Slider from './../Slider';
 
 const Home = ({
-	navigation,
-	theme
+	navigation
 }) => {
 
 	const isLand = useIsLand();
@@ -31,7 +30,8 @@ const Home = ({
 					borderColor: "red"
 				}}
 			>
-				<Text>await later slide show here...</Text>
+				{/* <Text>await later slide show here...</Text> */}
+				<Slider />
 			</View>
 
 			<View
@@ -41,7 +41,7 @@ const Home = ({
 					alignItems: "center"
 				}}
 			>
-				<PlayButton onPress={onPlay} theme={theme} />
+				<PlayButton onPress={onPlay} />
 
 				<Button
 					mode="contained"
@@ -55,9 +55,7 @@ const Home = ({
 	);
 };
 
-export default connect(state => ({
-	theme: state.UItheme.theme
-}))(Home);
+export default Home;
 
 const styles = StyleSheet.create({
 	buttonCustom: {

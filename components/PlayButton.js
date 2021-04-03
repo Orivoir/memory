@@ -1,5 +1,6 @@
 import React from 'react';
 import {Button} from 'react-native-paper';
+import { connect } from 'react-redux';
 
 const PlayButton = ({
   theme,
@@ -21,4 +22,6 @@ const PlayButton = ({
   );
 }
 
-export default PlayButton;
+export default connect(state => ({
+  theme: state.UItheme.theme
+}))(PlayButton);
