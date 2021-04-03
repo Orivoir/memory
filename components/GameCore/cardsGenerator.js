@@ -31,16 +31,15 @@ export default function getCards({cardsNumber, cardsTheme}) {
   const allCards = StaticContentsManager.get(cardsManagerName);
   const range = generateRangeCards({cardsNumber});
 
-  const cardCore = allCards.slice(range.from, range.to).map((svg, index) => ({
+  const cardCore = allCards.slice(range.from, range.to).map((svg, cardRelationIndex) => ({
     uri: svg.uri,
-    key: svg.hash,
-    id: index
+    key: cardRelationIndex
   }));
 
   return Array.from(Array(cardCore.length * 2).keys())
-  .map(index => ({
-    ...cardCore[index % (cardCore.length)],
-    id: index
+  .map(uniqIndex => ({
+    ...cardCore[uniqIndex % (cardCore.length)],
+    id: uniqIndex
   }));
 
 }
