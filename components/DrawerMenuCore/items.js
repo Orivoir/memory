@@ -10,7 +10,7 @@ export default function createItems({
     {
       title: "badges",
       description: "see event badges you have unlocks",
-      icon: <List.Icon {...props} name="trophy" />,
+      icon: props => <List.Icon {...props} name="trophy" />,
       onPress: onPressBadges,
     },
     {

@@ -17,11 +17,12 @@ const ListItems = ({
 
   return (
     <ScrollView>
-      {items.map(item => (
+      {items.map((item,index) => (
         <List.Item
+          key={index}
           left={item.icon}
-          title="settings"
-          description="customize you application"
+          title={item.title}
+          description={item.description}
           onPress={onPressSettings}
         />
       ))}
