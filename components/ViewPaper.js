@@ -16,7 +16,7 @@ const ViewPaper = ({
   return (
     <View
       style={{
-        backgroundColor: colors.primary,
+        backgroundColor: colors.background,
         ...(style || {})
       }}
     >
