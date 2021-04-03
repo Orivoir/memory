@@ -5,20 +5,9 @@ import {useIsFocused} from '@react-navigation/native';
 import useIsLand from '../../hooks/useIsLand';
 import { connect } from 'react-redux';
 
-const TARGET_ICON_NAME = [
-  "one",
-  "two",
-  "three",
-  "four",
-  "five",
-  "six",
-  "seven",
-  "eight",
-  "nine",
-  "ten",
-  "eleven",
-  "twelve",
-];
+import {
+  CLOCK_ICON_TARGET_NAME
+} from './../../constant';
 
 const Chrono = ({theme, isPause=false}) => {
 
@@ -32,7 +21,7 @@ const Chrono = ({theme, isPause=false}) => {
   const timeId = React.useRef(null);
 
   const timeTargetIconIndex = time % 12;
-  const iconName = `clock-time-${TARGET_ICON_NAME[timeTargetIconIndex]}`;
+  const iconName = `clock-time-${CLOCK_ICON_TARGET_NAME[timeTargetIconIndex]}`;
 
   const freeMemory = () => {
     clearInterval(timeId.current);

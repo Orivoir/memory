@@ -6,7 +6,9 @@ import getCards from './cardsGenerator';
 import { useIsFocused } from '@react-navigation/core';
 import resolveAssetSource from 'react-native/Libraries/Image/resolveAssetSource';
 
-const TIME_SHOW_CARD_MISTAKE = 750; // ms
+import {
+  TIME_SHOW_CARD_MISTAKE
+} from './../../constant';
 
 const Board = ({
   onMistake,
