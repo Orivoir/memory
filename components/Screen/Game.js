@@ -1,10 +1,41 @@
 import React from 'react';
-import {Headline} from 'react-native-paper';
+import Wrapper from './../Wrapper';
+import {View} from 'react-native';
+
+import GameAth from './../GameCore/Ath';
+import GameBoard from './../GameCore/Board';
 
 const Game = ({navigation}) => {
-	
+
+	const [count, setCount] = React.useState({mistakes: 0, success: 0});
+
+	const createOnSetCount = type => () => (
+		setCount(currentCount => ({
+			...currentCount,
+			[type]: currentCount[type] + 1
+		}))
+	);
+
+	const onFinish = () => {};
+
 	return (
-		<Headline>Game</Headline>
+		<Wrapper
+			style={{padding: 8}}
+		>
+			<View>
+				<GameAth count={count} />
+			</View>
+
+			<View>
+				{/*
+					<GameBoard
+						onMistake={createOnSetCount("mistakes")}
+						onSuccess={createOnSetCount("success")}
+						onFinish={onFinish}
+					/>
+				*/}
+			</View>
+		</Wrapper>
 	);
 };
 
