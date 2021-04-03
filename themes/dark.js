@@ -8,8 +8,11 @@ const overrideProperties = {
     ...DarkTheme.colors,
     background: "#2c3e50",
     text: "#fff",
-    accent: "#1abc9c",
-    primary: "#81C784"
+    accent: "#9b59b6",
+    primary: "#81C784",
+
+
+    secondary: "#1abc9c",
   }
 };
 
