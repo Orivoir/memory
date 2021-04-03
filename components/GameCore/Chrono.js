@@ -39,6 +39,12 @@ const Chrono = ({theme, isPause=false}) => {
     timeId.current = null;
   };
 
+  React.useEffect(() => {
+    return () => {
+      freeMemory();
+    };
+  });
+
   const onUpdateTime = () => {
     setTime(currentTime => currentTime + 1)
   };
