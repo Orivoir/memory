@@ -14,7 +14,7 @@
 
 - Home screen ✅
 - Settings screen ✅
-- Game screen ❌
+- Game screen ✅ (first version screen)
 - Badges screen ❌
 
 - Slider frames basic tutorials game ❌
