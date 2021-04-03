@@ -10,12 +10,12 @@ export class Container {
     return ["cardsCats", "cardsFruits"];
   }
 
-  get(name) {
+  static get(name) {
 
     if(typeof name !== "string") {
       throw new RangeError(`static content arg1: name should be a string given: "${typeof name}"`);
     }
-    name = name.toLocaleLowerCase().trim();
+    name = name.trim();
 
     if(!Container.STATIC_CONTENT.includes(name)) {
       throw new Error(`static content: "${name}", not found`);
@@ -24,11 +24,11 @@ export class Container {
     return Container[name]();
   }
 
-  cardsCats() {
+  static cardsCats() {
     return cardsCats;
   }
 
-  cardsFruits() {
-    cardsFruits
+  static cardsFruits() {
+    return cardsFruits
   }
 }
