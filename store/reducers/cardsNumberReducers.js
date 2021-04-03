@@ -1,14 +1,15 @@
-const INITIAL_STATE = 10;
+import {
+  INITIAL_STATE_CARDS_NUMBER,
+  MIN_VALUE_CARDS_NUMBER,
+  MAX_VALUE_CARDS_NUMBER
+} from './../../constant';
 
-const MIN_VALUE = 2;
-const MAX_VALUE = 50;
-
-export default function cardsNumberReducer(state=INITIAL_STATE, action) {
+export default function cardsNumberReducer(state=INITIAL_STATE_CARDS_NUMBER, action) {
 
   switch (action.type) {
     case "RESET_CARDS_NUMBER":
-      if(state !== INITIAL_STATE) {
-        return INITIAL_STATE;
+      if(state !== INITIAL_STATE_CARDS_NUMBER) {
+        return INITIAL_STATE_CARDS_NUMBER;
       }
       return state;
 
@@ -16,8 +17,8 @@ export default function cardsNumberReducer(state=INITIAL_STATE, action) {
       if(
         typeof action.value === "number" &&
         !isNaN(action.value) &&
-        action.value >= MIN_VALUE &&
-        action.value <= MAX_VALUE
+        action.value >= MIN_VALUE_CARDS_NUMBER &&
+        action.value <= MAX_VALUE_CARDS_NUMBER
       ) {
         return Math.round(action.value);
       }

@@ -4,6 +4,11 @@ import {Text} from 'react-native-paper';
 import Slider from '@react-native-community/slider';
 import {connect, useDispatch} from 'react-redux';
 
+import {
+  MIN_VALUE_CARDS_NUMBER,
+  MAX_VALUE_CARDS_NUMBER
+} from './../../constant';
+
 const SettingsNumberCards = ({cardsNumber}) => {
 
   const [currentCardsNumber, setCurrentCardsNumber] = React.useState(cardsNumber);
@@ -45,8 +50,8 @@ const SettingsNumberCards = ({cardsNumber}) => {
       <Slider
         style={{flex: 1}}
         step={1}
-        minimumValue={2}
-        maximumValue={50}
+        minimumValue={MIN_VALUE_CARDS_NUMBER}
+        maximumValue={MAX_VALUE_CARDS_NUMBER}
         value={currentCardsNumber}
 
         onSlidingComplete={onSetCardNumber}

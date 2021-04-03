@@ -1,12 +1,11 @@
 import ThemeLight from './../../themes/light';
 import ThemeDark from './../../themes/dark';
 
-const INITIAL_STATE = {
-  type: 'light',
-  theme: ThemeLight,
-};
+import {
+  INITIAL_STATE_UI_THEME
+} from './../../constant';
 
-export default function UIthemeReducers(state = INITIAL_STATE, action) {
+export default function UIthemeReducers(state=INITIAL_STATE_UI_THEME, action) {
   switch (action.type) {
     case 'THEME_TOGGLE':
       return state.type === 'light'

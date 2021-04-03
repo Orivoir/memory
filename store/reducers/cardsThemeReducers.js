@@ -1,17 +1,9 @@
-const ALLOWS_CARDS_THEME_VALUES = {
-  CATS: {
-    path: '/cats/svg/',
-    name: 'cats',
-  },
-  FRUITS: {
-    path: '/fruits/svg',
-    name: 'fruits',
-  },
-};
+import {
+  ALLOWS_CARDS_THEME_VALUES,
+  INITIAL_STATE_CARDS_THEME
+} from './../../constant';
 
-const INITIAL_STATE = ALLOWS_CARDS_THEME_VALUES.FRUITS;
-
-export default function cardsThemeReducers(state = INITIAL_STATE, action) {
+export default function cardsThemeReducers(state=INITIAL_STATE_CARDS_THEME, action) {
   switch (action.type) {
     case 'SET_CARDS_THEME':
       if (typeof action.name !== 'string') {
