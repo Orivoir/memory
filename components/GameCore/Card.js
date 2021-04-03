@@ -54,11 +54,11 @@ const Card = ({
         {...additionalsPressableProps}
         // android_ripple={}
       >
-        <SvgCssUri
+        {isMounted ? <SvgCssUri
           uri={uri}
           width={50}
           height={75}
-        />
+        />: <></>}
       </Pressable>
     </View>
   );
