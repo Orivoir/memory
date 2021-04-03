@@ -36,7 +36,7 @@ const App = ({theme}) => {
             }}
           >
             <Drawer.Screen name="Home" component={Home} />
-            <Drawer.Screen name="Game" component={Game} />
+            <Drawer.Screen name="Game" options={{headerShown: false}} component={Game} />
             <Drawer.Screen name="Badges" component={Badges} />
             <Drawer.Screen name="Settings" component={Settings} />
 
