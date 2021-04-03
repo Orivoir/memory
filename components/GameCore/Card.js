@@ -1,3 +1,4 @@
+import { useIsFocused } from '@react-navigation/core';
 import React from 'react';
 import { Pressable, View } from 'react-native';
 import {SvgCssUri} from 'react-native-svg';
@@ -26,11 +27,17 @@ const Card = ({
     state = CARD_STATE.OPEN;
   }
 
+  const isMounted = useIsFocused();
+
   const {colors} = theme;
-
   const borderColor = state === CARD_STATE.HIDE ? colors.secondary: state === CARD_STATE.OPEN ? colors.primary: state === CARD_STATE.MISTAKE ? colors.error: colors.accent;
-
   const additionalsPressableProps = enabled ? {onPress: () => onPress(id)}: {};
+
+  if(!isMounted) {
+    // return empty fragment during
+    // hide component for not try load ressource image
+    return <></>;
+  }
 
   return (
     <View
