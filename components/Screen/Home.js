@@ -10,7 +10,6 @@ import Slider from './../Slider';
 const Home = ({
 	navigation
 }) => {
-
 	const isLand = useIsLand();
 
 	const onPlay = () => {
