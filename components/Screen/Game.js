@@ -4,10 +4,12 @@ import {View} from 'react-native';
 
 import GameAth from './../GameCore/Ath';
 import GameBoard from './../GameCore/Board';
+import useIsLand from '../../hooks/useIsLand';
 
 const Game = ({navigation}) => {
 
 	const [count, setCount] = React.useState({mistakes: 0, success: 0});
+	const [isPauseTime, setIsPauseTime] = React.useState(false);
 
 	const createOnSetCount = type => () => (
 		setCount(currentCount => ({
@@ -16,24 +18,35 @@ const Game = ({navigation}) => {
 		}))
 	);
 
-	const onFinish = () => {};
+	const onFinish = () => {
+		console.log("has find all cards ^.^");
+		setIsPauseTime(true);
+	};
+
+	const isLand = useIsLand();
 
 	return (
 		<Wrapper
 			style={{padding: 8}}
 		>
-			<View>
-				<GameAth count={count} />
+			<View style={{
+				flex: !isLand ? .2: .12,
+				justifyContent: "center"
+			}}>
+				<GameAth count={count} isPauseTime={isPauseTime} />
 			</View>
 
-			<View>
-				{/*
-					<GameBoard
-						onMistake={createOnSetCount("mistakes")}
-						onSuccess={createOnSetCount("success")}
-						onFinish={onFinish}
-					/>
-				*/}
+			<View
+				style={{
+					flex: !isLand ? .8: .88,
+					justifyContent: "center"
+				}}
+			>
+				<GameBoard
+					onMistake={createOnSetCount("mistakes")}
+					onSuccess={createOnSetCount("success")}
+					onFinish={onFinish}
+				/>
 			</View>
 		</Wrapper>
 	);
