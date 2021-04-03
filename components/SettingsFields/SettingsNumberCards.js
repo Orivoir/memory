@@ -45,8 +45,8 @@ const SettingsNumberCards = ({cardsNumber}) => {
       <Slider
         style={{flex: 1}}
         step={1}
-        minimumValue={4}
-        maximumValue={100}
+        minimumValue={2}
+        maximumValue={50}
         value={currentCardsNumber}
 
         onSlidingComplete={onSetCardNumber}
