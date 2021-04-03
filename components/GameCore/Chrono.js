@@ -43,18 +43,20 @@ const Chrono = ({theme}) => {
     setTime(currentTime => currentTime + 1)
   };
 
-
-  if(!isMounted) {
-    freeMemory();
-  } else if(isMounted && !timeId.current) {
-    setTime(0);
-    timeId.current = setInterval(onUpdateTime, 1e3);
-  }
-
   const isLand = useIsLand();
 
   const iconSize = !isLand ? 48: 32;
   // const fontSize = !isLand ? 20: 16;
+
+
+  if(!isMounted) {
+    freeMemory();
+    // component is hide
+    return <></>;
+  } else if(isMounted && !timeId.current) {
+    setTime(0);
+    timeId.current = setInterval(onUpdateTime, 1e3);
+  }
 
   return (
     <View
