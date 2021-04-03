@@ -1,7 +1,7 @@
 const INITIAL_STATE = 10;
 
-const MIN_VALUE = 4;
-const MAX_VALUE = 100;
+const MIN_VALUE = 2;
+const MAX_VALUE = 50;
 
 export default function cardsNumberReducer(state=INITIAL_STATE, action) {
 
