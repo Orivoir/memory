@@ -4,7 +4,7 @@ import { View } from 'react-native';
 import GameChrono from './Chrono';
 import GameScore from './Score';
 
-const Ath = ({count}) => {
+const Ath = ({count, isPauseTime}) => {
   return (
     <View
       style={{
@@ -14,7 +14,7 @@ const Ath = ({count}) => {
       }}
     >
       <View>
-        <GameChrono />
+        <GameChrono isPause={isPauseTime} />
       </View>
 
       <View>

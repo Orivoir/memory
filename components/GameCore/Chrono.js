@@ -20,7 +20,7 @@ const TARGET_ICON_NAME = [
   "twelve",
 ];
 
-const Chrono = ({theme}) => {
+const Chrono = ({theme, isPause=false}) => {
 
   // synthetic state of components
   // because react native navigation use a mask view renderer
@@ -53,9 +53,13 @@ const Chrono = ({theme}) => {
     freeMemory();
     // component is hide
     return <></>;
-  } else if(isMounted && !timeId.current) {
+  } else if(isMounted && !timeId.current && !isPause) {
     setTime(0);
     timeId.current = setInterval(onUpdateTime, 1e3);
+  }
+
+  if(isPause) {
+    freeMemory();
   }
 
   return (
